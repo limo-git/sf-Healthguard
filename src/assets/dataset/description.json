@@ -1,0 +1,752 @@
+{
+  "Cloudy Urine": {
+    "english_name": "Cloudy Urine",
+    "hindi_name": "धुंधला मूत्र",
+    "english_description": "Presence of particles or turbidity in the urine, often indicating infection or other health issues.",
+    "hindi_description": "मूत्र में कणों या धुंधलाई की उपस्थिति, जो अक्सर संक्रमण या अन्य स्वास्थ्य समस्याओं का संकेत करती है।"
+  },
+  "Epistaxis": {
+    "english_name": "Epistaxis",
+    "hindi_name": "नाक से खून आना",
+    "english_description": "Bleeding from the nose, often caused by injury, irritation, or underlying health conditions.",
+    "hindi_description": "नाक से खून बहना, जिसकी अक्सर चोट, चिढ़ या आधारभूत स्वास्थ्य स्थितियों के कारण होती है।"
+  },
+  "Eye Pain": {
+    "english_name": "Eye Pain",
+    "hindi_name": "आंखों में दर्द",
+    "english_description": "Discomfort or pain in one or both eyes, often caused by various factors including injury, infection, or strain.",
+    "hindi_description": "एक या दोनों आंखों में असहजता या दर्द, जिसकी अक्सर चोट, संक्रमण, या तनाव जैसे विभिन्न कारकों से होती है।"
+  },
+  "Crepitus": {
+    "english_name": "Crepitus",
+    "hindi_name": "क्रेपिटस",
+    "english_description": "Crackling or popping sound heard during movement of joints or bones, often associated with conditions like arthritis.",
+    "hindi_description": "जोड़ों या हड्डियों के गति के दौरान सुनाई देने वाली खिसखिसाहट या फटकार, जो अक्सर गठिया जैसी स्थितियों से जुड़ी होती है।"
+  },
+  "Food poisoning": {
+    "english_name": "Food poisoning",
+    "hindi_name": "खाने का जहर",
+    "english_description": "Illness caused by consuming contaminated food or beverages, resulting in symptoms like nausea, vomiting, and diarrhea.",
+    "hindi_description": "अपशिष्ट खाद्य या पेय का सेवन करने से होने वाली बीमारी, जिससे मतली, उल्टी, और दस्त जैसे लक्षण होते हैं।"
+  },
+  "Sinusitis": {
+    "english_name": "Sinusitis",
+    "hindi_name": "साइनसाइटिस",
+    "english_description": "Inflammation or swelling of the tissue lining the sinuses, often causing symptoms like facial pain, congestion, and headache.",
+    "hindi_description": "साइनसों की ऊतक की लाइनिंग का सूजन या सूजन, जिससे चेहरे में दर्द, नाक का बंद होना, और सिरदर्द जैसे लक्षण होते हैं।"
+  },
+  "Rash": {
+    "english_name": "Rash",
+    "hindi_name": "खुजली",
+    "english_description": "Skin eruption or irritation characterized by redness, itching, or inflammation.",
+    "hindi_description": "लालिमा, खुजली, या सूजन के संकेतों के साथ त्वचा का फूलना या चिढ़ाना।"
+  },
+  "Chest Tightness": {
+    "english_name": "Chest Tightness",
+    "hindi_name": "सीने में दबाव",
+    "english_description": "Feeling of pressure, heaviness, or tightness in the chest, often associated with conditions like angina or anxiety.",
+    "hindi_description": "सीने में दबाव, भारीपन, या कसावट की भावना, जो अक्सर एंजाइना या चिंता जैसी स्थितियों से जुड़ी होती है।"
+  },
+  "Migraine": {
+    "english_name": "Migraine",
+    "hindi_name": "माइग्रेन",
+    "english_description": "Recurring severe headaches often accompanied by nausea, vomiting, and sensitivity to light and sound.",
+    "hindi_description": "बार-बार होने वाले तेज दर्द के सिर जो अक्सर मतली, उल्टी, और प्रकाश और ध्वनि के प्रति संवेदनशीलता के साथ होते हैं।"
+  },
+  "Typhoid": {
+    "english_name": "Typhoid",
+    "hindi_name": "टाइफाइड",
+    "english_description": "Bacterial infection caused by Salmonella typhi, characterized by fever, abdominal pain, and gastrointestinal issues.",
+    "hindi_description": "सालमोनेला टाइफी द्वारा उत्पन्न बैक्टीरियल संक्रमण, जिसके लक्षणों में बुखार, पेट का दर्द, और गैस्ट्रोइंटेस्टाइनल समस्याएं शामिल हैं।"
+  },
+  "Insomnia": {
+    "english_name": "Insomnia",
+    "hindi_name": "अनिद्रा",
+    "english_description": "Difficulty falling asleep or staying asleep, leading to inadequate or non-restorative sleep.",
+    "hindi_description": "नींद न आने या नींद में रहने में कठिनाई, जिससे पर्याप्त या विश्रांति युक्त नींद नहीं मिलती है।"
+  },
+  "Bronchitis": {
+    "english_name": "Bronchitis",
+    "hindi_name": "ब्रोंकाइटिस",
+    "english_description": "Inflammation of the bronchial tubes, often caused by viral or bacterial infection, leading to coughing and difficulty breathing.",
+    "hindi_description": "ब्रोंकियल ट्यूब की सूजन, जो कि अक्सर वायरल या बैक्टीरियल संक्रमण के कारण होती है, जिससे खांसी और सांस लेने में कठिनाई होती है।"
+  },
+  "Common Cold": {
+    "english_name": "Common Cold",
+    "hindi_name": "सामान्य ठंड",
+    "english_description": "A viral infection of the upper respiratory tract that can cause symptoms such as sneezing, runny or stuffy nose, sore throat, coughing, and mild fatigue.",
+    "hindi_description": "ऊपरी श्वसन तंत्र का वायरल संक्रमण जो छींकने, बहती या बंद नाक, गले में खराश, खांसी और हल्के थकान के लक्षण पैदा कर सकता है।"
+  },
+  "Cellulitis": {
+    "english_name": "Cellulitis",
+    "hindi_name": "सेल्यूलाइटिस",
+    "english_description": "Bacterial skin infection that causes redness, swelling, and tenderness of the affected area.",
+    "hindi_description": "बैक्टीरियल त्वचा संक्रमण जो प्रभावित क्षेत्र का लाली, सूजन, और त्वचा की नरमी का कारण बनता है।"
+  },
+  "Runny Nose": {
+    "english_name": "Runny Nose",
+    "hindi_name": "बहती नाक",
+    "english_description": "Excessive production of mucus from the nasal passages, often associated with cold or allergies.",
+    "hindi_description": "नाक के मार्ग से मूकुस की अत्यधिक उत्पादन, जो अक्सर सर्दी या एलर्जी के साथ जुड़ा होता है।"
+  },
+  "Edema at affected area": {
+    "english_name": "Edema at affected area",
+    "hindi_name": "प्रभावित क्षेत्र पर सूजन",
+    "english_description": "Swelling caused by fluid accumulation in tissues, usually in response to injury or inflammation.",
+    "hindi_description": "तंतुओं में तरल संचय के कारण सूजन, आमतौर पर चोट या सूजन के प्रतिक्रिया के रूप में।"
+  },
+  "Bloating": {
+    "english_name": "Bloating",
+    "hindi_name": "पेट फूलना",
+    "english_description": "Feeling of fullness or swelling in the abdomen, often accompanied by gas or discomfort.",
+    "hindi_description": "पेट में भराई या सूजन की भावना, अक्सर गैस या असहजता के साथ।"
+  },
+  "Carpel tunnel syndrome": {
+    "english_name": "Carpel tunnel syndrome",
+    "hindi_name": "कार्पेल टनल सिंड्रोम",
+    "english_description": "Compression of the median nerve in the wrist, causing pain, tingling, and weakness in the hand.",
+    "hindi_description": "कलाई में मध्य तंतु का दबाव, हाथ में दर्द, सुन्नता, और कमजोरी का कारण।"
+  },
+  "Repeated doing same activity without any reason": {
+    "english_name": "Repeated doing same activity without any reason",
+    "hindi_name": "बिना किसी कारण के बार-बार एक ही गतिविधि करना",
+    "english_description": "Engaging in the same behavior or activity repeatedly without any apparent purpose or reason.",
+    "hindi_description": "किसी भी प्रकट कारण या उद्देश्य के बिना बार-बार एक ही व्यवहार या गतिविधि में लगना।"
+  },
+  "Spinning Sensation": {
+    "english_name": "Spinning Sensation",
+    "hindi_name": "घूमने की भावना",
+    "english_description": "Feeling as if the surrounding environment is spinning or moving when it is not, often associated with dizziness or vertigo.",
+    "hindi_description": "ऐसा लगना कि आसपास का वातावरण घूम रहा है या चल रहा है जब ऐसा नहीं है, जो अक्सर चक्कर या भ्रम के साथ जुड़ा होता है।"
+  },
+  "Bad Breath": {
+    "english_name": "Bad Breath",
+    "hindi_name": "बदबू",
+    "english_description": "Unpleasant odor emanating from the mouth, often caused by poor dental hygiene or underlying health issues.",
+    "hindi_description": "मुंह से आनेवाली अविष्ट गंध, अक्सर बुरी दंत स्वच्छता या अंतर्निहित स्वास्थ्य समस्याओं के कारण होती है।"
+  },
+  "Peptic Ulcer disease": {
+    "english_name": "Peptic Ulcer disease",
+    "hindi_name": "पेप्टिक अल्सर रोग",
+    "english_description": "Open sores that develop on the lining of the stomach, small intestine, or esophagus, often caused by bacterial infection or prolonged use of NSAIDs.",
+    "hindi_description": "पेट की लाइनिंग, छोटे आंत या उभार में बनने वाले खुले घाव, जो कि अक्सर बैक्टीरियल संक्रमण या NSAIDs का लंबे समय तक उपयोग करने के कारण होते हैं।"
+  },
+  "Warmth in joint": {
+    "english_name": "Warmth in joint",
+    "hindi_name": "जोड़ में गरमी",
+    "english_description": "Feeling of warmth or heat in the joint area, often associated with inflammation or infection.",
+    "hindi_description": "जोड़ क्षेत्र में गरमी या ऊष्मा की भावना, जो अक्सर सूजन या संक्रमण के साथ जुड़ी होती है।"
+  },
+  "Weight Loss": {
+    "english_name": "Weight Loss",
+    "hindi_name": "वजन कमी",
+    "english_description": "Reduction in body weight, often unintentional and indicative of an underlying health issue.",
+    "hindi_description": "शारीरिक वजन में कमी, अक्सर अनजाने में और किसी अंतर्निहित स्वास्थ्य समस्या का संकेत होती है।"
+  },
+  "Hand and Wrist Pain": {
+    "english_name": "Hand and Wrist Pain",
+    "hindi_name": "हाथ और कलाई का दर्द",
+    "english_description": "Pain or discomfort experienced in the hands or wrists, often due to injury, strain, or underlying medical conditions.",
+    "hindi_description": "हाथों या कलाइयों में अनुभव की जाने वाली दर्द या असहजता, अक्सर चोट, तनाव, या अंतर्निहित चिकित्सा स्थितियों के कारण होती है।"
+  },
+  "Early Morning Awakening": {
+    "english_name": "Early Morning Awakening",
+    "hindi_name": "सुबह जल्दी जागना",
+    "english_description": "Waking up from sleep earlier than desired, often accompanied by difficulty falling back asleep.",
+    "hindi_description": "चाहिते समय से पहले नींद से जागना, अक्सर वापस नींद में धीरे जाने के कठिनाई के साथ।"
+  },
+  "Fatigue": {
+    "english_name": "Fatigue",
+    "hindi_name": "थकान",
+    "english_description": "Constant tiredness or weakness affecting physical and mental energy levels.",
+    "hindi_description": "निरंतर थकान या कमजोरी जो शारीरिक और मानसिक ऊर्जा स्तरों को प्रभावित करती है।"
+  },
+  "Indigestion": {
+    "english_name": "Indigestion",
+    "hindi_name": "पाचन कमी",
+    "english_description": "Discomfort or pain in the upper abdomen, often accompanied by bloating, nausea, or heartburn.",
+    "hindi_description": "ऊपरी पेट में असहजता या दर्द, अक्सर पेट फूलने, मतली, या जलन के साथ।"
+  },
+  "Tingling numbness in little, ring, middle finger": {
+    "english_name": "Tingling numbness in little, ring, middle finger",
+    "hindi_name": "छोटे, अंगूठे, मध्य उंगली में सुन्नता",
+    "english_description": "Abnormal sensation of tingling or numbness experienced in the little, ring, or middle finger, often due to nerve compression or injury.",
+    "hindi_description": "छोटे, अंगूठे, या मध्य उंगली में महसूस की जाने वाली घंटी या सुन्नता की असामान्य भावना, अक्सर तंतु की संपीड़न या चोट के कारण।"
+  },
+  "Not feeling good": {
+    "english_name": "Not feeling good",
+    "hindi_name": "अच्छा नहीं लग रहा",
+    "english_description": "General sense of malaise or discomfort, often without specific symptoms.",
+    "hindi_description": "अक्सर विशेष लक्षणों के बिना, अस्वस्थता या असहजता की सामान्य भावना।"
+  },
+  "Rectal bleeding": {
+    "english_name": "Rectal bleeding",
+    "hindi_name": "गुदा खूनी",
+    "english_description": "Bleeding from the rectum or anus, often associated with conditions like hemorrhoids, anal fissures, or gastrointestinal bleeding.",
+    "hindi_description": "मलाशय या गुदाशय से खून बहना, जिसे अक्सर खूनी बवासीर, गुदाफांसे, या गैस्ट्रोइंटेस्टाइनल ब्लीडिंग के जैसे स्थितियों से जोड़ा जाता है।"
+  },
+  "Loose Motion": {
+    "english_name": "Loose Motion",
+    "hindi_name": "लूज मोशन",
+    "english_description": "Frequent passing of watery or loose stools, often associated with gastrointestinal infection or dietary issues.",
+    "hindi_description": "पानीदार या ढीले दस्तों का बार-बार जाना, अक्सर पाचन तंत्र संक्रमण या आहार संबंधित समस्याओं से जुड़ा होता है।"
+  },
+  "Joint Pain": {
+    "english_name": "Joint Pain",
+    "hindi_name": "जोड़ों का दर्द",
+    "english_description": "Discomfort or pain experienced in the joints, often due to inflammation, injury, or arthritis.",
+    "hindi_description": "जोड़ों में महसूस की जाने वाली असहजता या दर्द, अक्सर सूजन, चोट, या गठिया के कारण।"
+  },
+  "OCD": {
+    "english_name": "OCD",
+    "hindi_name": "ओसीडी",
+    "english_description": "Obsessive-Compulsive Disorder, a mental health condition characterized by intrusive thoughts (obsessions) and repetitive behaviors (compulsions).",
+    "hindi_description": "ओब्सेसिव-कंपल्सिव डिसऑर्डर, एक मानसिक स्वास्थ्य स्थिति जिसमें प्रवेशक विचार (आवेगनाओं) और दोहरावी व्यवहार (आवश्यकताओं) के साथ अभिप्रेरित होती है।"
+  },
+  "Urinary Tract Infection": {
+    "english_name": "Urinary Tract Infection",
+    "hindi_name": "मूत्र मार्ग संक्रमण",
+    "english_description": "Infection affecting any part of the urinary system, including the kidneys, bladder, ureters, or urethra.",
+    "hindi_description": "किडनी, मूत्राशय, मूत्रनाली, या मूत्रमार्ग का कोई भी हिस्सा प्रभावित करने वाली संक्रमण।"
+  },
+  "None of These": {
+    "english_name": "None of These",
+    "hindi_name": "इनमें से कोई भी नहीं",
+    "english_description": "No symptoms listed above are present.",
+    "hindi_description": "ऊपर सूचीत लक्षणों में कोई नहीं है।"
+  },
+  "Foul-Smelling Urine": {
+    "english_name": "Foul-Smelling Urine",
+    "hindi_name": "बदबूदार मूत्र",
+    "english_description": "Urine with an unpleasant or foul odor, often indicative of an underlying health issue or dietary habits.",
+    "hindi_description": "असंगत या बदबूदार गंध वाला मूत्र, अक्सर अंतर्निहित स्वास्थ्य समस्या या आहार आदतों का संकेत होता है।"
+  },
+  "Jaundice": {
+    "english_name": "Jaundice",
+    "hindi_name": "पीलिया",
+    "english_description": "Yellowing of the skin and whites of the eyes, often caused by liver dysfunction or excessive bilirubin in the blood.",
+    "hindi_description": "त्वचा और आँखों की सफेदियों का पीलापन, जो अक्सर लिवर के असंचालन या रक्त में अत्यधिक बिलीरुबिन के कारण होता है।"
+  },
+  "Gastroenteritis": {
+    "english_name": "Gastroenteritis",
+    "hindi_name": "गैस्ट्रोएंटेराइटिस",
+    "english_description": "Inflammation of the stomach and intestines, often resulting in symptoms like diarrhea, vomiting, and abdominal pain.",
+    "hindi_description": "पेट और आंतों की सूजन, अक्सर दस्त, उल्टी, और पेट दर्द जैसे लक्षणों का परिणाम।"
+  },
+  "Bloody Urine": {
+    "english_name": "Bloody Urine",
+    "hindi_name": "रक्तशुद्ध मूत्र",
+    "english_description": "Urine containing visible blood, often indicative of a urinary tract infection, kidney stones, or other urinary issues.",
+    "hindi_description": "दिखाई देने वाले रक्त के साथ मूत्र, अक्सर मूत्र मार्ग संक्रमण, गुर्दे की पथरी, या अन्य मूत्र संबंधित समस्याओं का संकेत होता है।"
+  },
+  "Anxiety": {
+    "english_name": "Anxiety",
+    "hindi_name": "चिंता",
+    "english_description": "Feeling of worry, nervousness, or unease, often without a specific trigger and interfering with daily activities.",
+    "hindi_description": "चिंता, घबराहट, या अस्वस्थता की भावना, अक्सर किसी विशेष कारण के बिना और दैनिक गतिविधियों में हस्तक्षेप करने वाला।"
+  },
+  "Malaria": {
+    "english_name": "Malaria",
+    "hindi_name": "मलेरिया",
+    "english_description": "Mosquito-borne infectious disease characterized by fever, chills, and flu-like symptoms.",
+    "hindi_description": "मच्छरों द्वारा फैलने वाली संक्रामक बीमारी जिसमें बुखार, ठंड, और फ्लू जैसे लक्षण होते हैं।"
+  },
+  "Neck Pain": {
+    "english_name": "Neck Pain",
+    "hindi_name": "गर्दन का दर्द",
+    "english_description": "Discomfort or pain experienced in the neck area, often due to muscle strain, poor posture, or underlying medical conditions.",
+    "hindi_description": "गर्दन क्षेत्र में महसूस की जाने वाली असहजता या दर्द, अक्सर मांसपेशियों के तनाव, बुरी आसन, या अंतर्निहित चिकित्सा स्थितियों के कारण होती है।"
+  },
+  "Balance Problems": {
+    "english_name": "Balance Problems",
+    "hindi_name": "संतुलन समस्याएं",
+    "english_description": "Difficulty maintaining balance or feeling unsteady, often due to inner ear issues, neurological conditions, or musculoskeletal problems.",
+    "hindi_description": "संतुलन बनाए रखने या अस्थिर महसूस करने की कठिनाई, अक्सर आंतरिक कान समस्याओं, न्यूरोलॉजिकल स्थितियों, या मांसपेशियों के संबंधित समस्याओं के कारण होती है।"
+  },
+  "Daytime Sleepiness": {
+    "english_name": "Daytime Sleepiness",
+    "hindi_name": "दिनभर की नींद",
+    "english_description": "Excessive sleepiness or drowsiness during daytime hours, often interfering with daily activities.",
+    "hindi_description": "दिनभर के समय में अत्यधिक नींद या उंघना, अक्सर दैनिक गतिविधियों में हस्तक्षेप करने वाला।"
+  },
+  "Osteoarthritis": {
+    "english_name": "Osteoarthritis",
+    "hindi_name": "ऑस्टियोआर्थराइटिस",
+    "english_description": "Degenerative joint disease characterized by the breakdown of joint cartilage and underlying bone changes.",
+    "hindi_description": "जोड़ों के कार्टिलेज और अंतर्निहित हड्डी के परिवर्तन की विघटना द्वारा चिह्नित विकार या दिनों की जोड़ रोग।"
+  },
+  "Hepatitis": {
+    "english_name": "Hepatitis",
+    "hindi_name": "हेपेटाइटिस",
+    "english_description": "Inflammation of the liver, often caused by viral infection, alcohol consumption, or autoimmune disorders.",
+    "hindi_description": "यकृत की सूजन, अक्सर वायरल संक्रमण, शराब पीना, या ऑटोइम्यून संक्रमणों के कारण होती है।"
+  },
+  "Burning in upper abdomen": {
+    "english_name": "Burning in upper abdomen",
+    "hindi_name": "ऊपरी पेट में जलन",
+    "english_description": "Sensation of burning or discomfort in the upper abdomen, often associated with acid reflux or gastritis.",
+    "hindi_description": "ऊपरी पेट में जलन या असहजता की भावना, अक्सर एसिड रिफ्लक्स या गैस्ट्राइटिस के साथ जुड़ी होती है।"
+  },
+  "Skin redness": {
+    "english_name": "Skin redness",
+    "hindi_name": "त्वचा की लालिमा",
+    "english_description": "Redness or inflammation of the skin, often due to irritation, infection, or allergic reactions.",
+    "hindi_description": "त्वचा का लालिमा या सूजन, अक्सर चिढ़ाने, संक्रमण, या एलर्जिक प्रतिक्रियाओं के कारण होती है।"
+  },
+  "Swelling around anus": {
+    "english_name": "Swelling around anus",
+    "hindi_name": "गुदा के आसपास सूजन",
+    "english_description": "Enlargement or puffiness in the area around the anus, often due to hemorrhoids or anal fissures.",
+    "hindi_description": "गुदाशय के आसपास क्षेत्र में विस्तार या सूजन, अक्सर बवासीर या गुदाफांसों के कारण।"
+  },
+  "Wheezing sound": {
+    "english_name": "Wheezing sound",
+    "hindi_name": "फीफ़ीफ़ाहट की आवाज़",
+    "english_description": "High-pitched whistling sound made during breathing, often associated with narrowed airways or respiratory conditions.",
+    "hindi_description": "साँस लेते समय उच्च ध्वनि की सीटी बजाने की आवाज, अक्सर संकुचित हवाई मार्गों या श्वसनीय स्थितियों के साथ जुड़ी होती है।"
+  },
+  "Chicken pox": {
+    "english_name": "Chicken pox",
+    "hindi_name": "चिकन पॉक्स",
+    "english_description": "Highly contagious viral infection characterized by itchy red blisters on the skin.",
+    "hindi_description": "चिकित्सक त्वचा पर खुजलीदार लाल डानों से चिह्नित अत्यधिक संक्रामक वायरल संक्रमण।"
+  },
+  "Abdominal Pain": {
+    "english_name": "Abdominal Pain",
+    "hindi_name": "पेट दर्द",
+    "english_description": "Discomfort or pain experienced in the abdomen, often due to digestive issues, inflammation, or infection.",
+    "hindi_description": "पेट में महसूस की जाने वाली असहजता या दर्द, अक्सर पाचन समस्याओं, सूजन, या संक्रमण के कारण होती है।"
+  },
+  "Fever": {
+    "english_name": "Fever",
+    "hindi_name": "बुखार",
+    "english_description": "Elevated body temperature, often indicative of an underlying infection or illness.",
+    "hindi_description": "शरीर का तापमान बढ़ जाना, अक्सर अंतर्निहित संक्रमण या बीमारी का संकेत होता है।"
+  },
+  "Loss of Appetite": {
+    "english_name": "Loss of Appetite",
+    "hindi_name": "भूख की कमी",
+    "english_description": "Reduction in desire to eat, often associated with illness, stress, or other underlying health issues.",
+    "hindi_description": "खाने की इच्छा में कमी, अक्सर बीमारी, तनाव, या अन्य अंतर्निहित स्वास्थ्य समस्याओं से जुड़ी होती है।"
+  },
+  "Coughing up blood": {
+    "english_name": "Coughing up blood",
+    "hindi_name": "खून का खांसना",
+    "english_description": "Cough that produces blood, often indicative of a serious underlying condition such as pneumonia, tuberculosis, or lung cancer.",
+    "hindi_description": "खांसी जो खून उत्पन्न करती है, अक्सर निमोनिया, टीबी, या फेफड़ों के कैंसर जैसी गंभीर अंतर्निहित स्थिति का संकेत होती है।"
+  },
+  "Voice Changes": {
+    "english_name": "Voice Changes",
+    "hindi_name": "आवाज़ में परिवर्तन",
+    "english_description": "Alteration in the tone, pitch, or quality of voice, often due to vocal cord issues, respiratory infections, or other conditions.",
+    "hindi_description": "आवाज़ के टोन, ऊंचाई, या गुण के परिवर्तन, अक्सर ध्वनि तार समस्याओं, श्वसन संक्रमणों, या अन्य स्थितियों के कारण होते हैं।"
+  },
+  "Pain and Tenderness in affected area": {
+    "english_name": "Pain and Tenderness in affected area",
+    "hindi_name": "प्रभावित क्षेत्र में दर्द और कोमलता",
+    "english_description": "Discomfort or sensitivity experienced in the affected area, often due to injury, inflammation, or infection.",
+    "hindi_description": "प्रभावित क्षेत्र में महसूस की जाने वाली असहजता या संवेदनशीलता, अक्सर चोट, सूजन, या संक्रमण के कारण होती है।"
+  },
+  "Tonsilitis": {
+    "english_name": "Tonsilitis",
+    "hindi_name": "टॉन्सिलाइटिस",
+    "english_description": "Inflammation of the tonsils, often resulting in sore throat, difficulty swallowing, and fever.",
+    "hindi_description": "टॉन्सिल्स की सूजन, अक्सर गले में खराश, निगलने में कठिनाई, और बुखार का परिणाम।"
+  },
+  "Tension headache": {
+    "english_name": "Tension headache",
+    "hindi_name": "तनाव सिरदर्द",
+    "english_description": "Headache characterized by a dull, steady pain often felt on both sides of the head or at the back of the neck.",
+    "hindi_description": "सिरदर्द, जो कि गोलाकार, स्थिर दर्द से चिह्नित होता है, अक्सर सिर के दोनों पक्षों या गर्दन के पीछे महसूस किया जाता है।"
+  },
+  "Bodyache": {
+    "english_name": "Bodyache",
+    "hindi_name": "शरीर दर्द",
+    "english_description": "Generalized discomfort or pain affecting various parts of the body, often associated with illness or fatigue.",
+    "hindi_description": "शारीरिक असहजता या दर्द, जो अक्सर बीमारी या थकान के साथ जुड़ी होती है।"
+  },
+  "Difficulty in breathing": {
+    "english_name": "Difficulty in breathing",
+    "hindi_name": "सांस लेने में कठिनाई",
+    "english_description": "Feeling of breathlessness or inability to breathe comfortably, often associated with respiratory issues or cardiovascular problems.",
+    "hindi_description": "सांस लेने में असहजता या सहजता से सांस नहीं लेने की भावना, अक्सर श्वसनीय समस्याओं या हृदयरोग से जुड़ी होती है।"
+  },
+  "Chills and Sweating": {
+    "english_name": "Chills and Sweating",
+    "hindi_name": "ठंड और पसीना",
+    "english_description": "Sudden onset of cold sensation followed by sweating, often indicative of fever or infection.",
+    "hindi_description": "पसीने के बाद एकाएक ठंड भावना का आरंभ, अक्सर बुखार या संक्रमण का संकेत होता है।"
+  },
+  "Constipation": {
+    "english_name": "Constipation",
+    "hindi_name": "कब्ज",
+    "english_description": "Difficulty passing stool or infrequent bowel movements, often associated with dietary factors or underlying health conditions.",
+    "hindi_description": "मल का निकलने में कठिनाई या अनियमित बार बार मल निकालना, अक्सर आहारी कारकों या अंतर्निहित स्वास्थ्य स्थितियों से जुड़ी होती है।"
+  },
+  "Acid Reflux(GERD)": {
+    "english_name": "Acid Reflux(GERD)",
+    "hindi_name": "एसिड रिफ्लक्स (जीईआरडी)",
+    "english_description": "Backflow of stomach acid into the esophagus, often causing heartburn or regurgitation.",
+    "hindi_description": "पेट के अम्ल का उल्टा अंगारित्र में, अक्सर हार्टबर्न या ऊपरी अमल करने से कारण होता है।"
+  },
+  "Itching": {
+    "english_name": "Itching",
+    "hindi_name": "खुजली",
+    "english_description": "Unpleasant sensation prompting the desire to scratch, often associated with skin irritation, allergy, or infection.",
+    "hindi_description": "खुजली की इच्छा को बढ़ाने वाली अनाहेत अनुभूति, अक्सर त्वचा चिढ़ाने, एलर्जी, या संक्रमण से जुड़ी होती है।"
+  },
+  "Common Flu": {
+    "english_name": "Common Flu",
+    "hindi_name": "सामान्य फ्लू",
+    "english_description": "Viral infection causing symptoms like fever, cough, sore throat, body aches, and fatigue.",
+    "hindi_description": "बुखार, खांसी, गले की खराश, शरीर का दर्द, और थकान जैसे लक्षणों का कारण बनने वाले वायरल संक्रमण।"
+  },
+  "Coughing": {
+    "english_name": "Coughing",
+    "hindi_name": "खांसी",
+    "english_description": "Expelling air from the lungs with a sudden sharp sound, often to clear the airways of mucus or foreign particles.",
+    "hindi_description": "फेफड़ों से एक अचानक तेज़ ध्वनि के साथ हवा बाहर निकालना, अक्सर मल या विदेशी कणों के हवाई मार्गों को साफ करने के लिए।"
+  },
+  "Pneumonia": {
+    "english_name": "Pneumonia",
+    "hindi_name": "न्यूमोनिया",
+    "english_description": "Infection of the lungs characterized by inflammation and accumulation of fluid or pus, often causing symptoms like cough, fever, and difficulty breathing.",
+    "hindi_description": "फेफड़ों की सूजन और तरल या पसीने के जमाव के साथ संक्रमण, अक्सर खांसी, बुखार, और सांस लेने में कठिनाई जैसे लक्षणों का कारण होता है।"
+  },
+  "Chest Pain": {
+    "english_name": "Chest Pain",
+    "hindi_name": "छाती में दर्द",
+    "english_description": "Discomfort or pain felt in the chest area, often due to issues with the heart, lungs, or gastrointestinal system.",
+    "hindi_description": "छाती के क्षेत्र में महसूस की जाने वाली असहजता या दर्द, अक्सर दिल, फेफड़ों, या गैस्ट्रोइंटेस्टाइनल प्रणाली से संबंधित समस्याओं के कारण होती है।"
+  },
+  "Melena": {
+    "english_name": "Melena",
+    "hindi_name": "मेलेना",
+    "english_description": "Passage of dark, tarry stools containing blood, often indicative of bleeding in the upper gastrointestinal tract.",
+    "hindi_description": "मल के अंदर काले, रसिये दार फेसेज़ का गुजरना, अक्सर ऊपरी पाचनात्मक त्राहियों में खून की बहने का संकेत होता है।"
+  },
+  "Joint Deformity": {
+    "english_name": "Joint Deformity",
+    "hindi_name": "जोड़ विकृति",
+    "english_description": "Abnormality or misalignment in the structure of a joint, often causing pain, stiffness, or limited range of motion.",
+    "hindi_description": "जोड़ की संरचना में असामान्यता या असंगति, अक्सर दर्द, संकुचन, या संवेदनशीलता का कारण होती है।"
+  },
+  "Diarrhoea": {
+    "english_name": "Diarrhoea",
+    "hindi_name": "दस्त",
+    "english_description": "Frequent passage of loose, watery stools, often accompanied by abdominal cramps, dehydration, and fever.",
+    "hindi_description": "लगातार बार-बार गोली, पानीदार अधर्म मल का गुजरना, अक्सर पेट के दर्द, डिहाइड्रेशन, और बुखार के साथ।"
+  },
+  "Frequent Urination": {
+    "english_name": "Frequent Urination",
+    "hindi_name": "बार-बार पेशाब आना",
+    "english_description": "Increased need to urinate more often than usual, often indicative of urinary tract infection, diabetes, or prostate issues.",
+    "hindi_description": "सामान्य से अधिक बार बार पेशाब की जरूरत, अक्सर मूत्रमार्ग संक्रमण, मधुमेह, या प्रोस्टेट समस्याओं का संकेत होती है।"
+  },
+  "Facial Pain": {
+    "english_name": "Facial Pain",
+    "hindi_name": "चेहरे का दर्द",
+    "english_description": "Discomfort or pain felt in the face, often due to issues with the sinuses, teeth, jaw, or nerves.",
+    "hindi_description": "चेहरे में महसूस की जाने वाली असहजता या दर्द, अक्सर नाक की अंडाशय, दांत, जबड़े, या तंत्रिकाओं के समस्याओं के कारण होती है।"
+  },
+  "Radiating Pain": {
+    "english_name": "Radiating Pain",
+    "hindi_name": "प्रक्षेपण दर्द",
+    "english_description": "Pain that spreads or radiates from its original site to other parts of the body.",
+    "hindi_description": "दर्द जो अपने मूल स्थान से शरीर के अन्य हिस्सों में फैल जाता है या प्रक्षिप्त होता है।"
+  },
+  "Difficulty in Swallowing": {
+    "english_name": "Difficulty in Swallowing",
+    "hindi_name": "निगलने में कठिनाई",
+    "english_description": "Feeling of obstruction or discomfort when trying to swallow food or liquid, often due to throat issues or neurological conditions.",
+    "hindi_description": "खाने या तरल पदार्थ निगलने की कोशिश करने पर बाधा या असहजता की भावना, अक्सर गले की समस्याओं या तंत्रिका स्थितियों के कारण होती है।"
+  },
+  "Nausea": {
+    "english_name": "Nausea",
+    "hindi_name": "मतली",
+    "english_description": "Feeling of queasiness or the urge to vomit, often associated with digestive issues, pregnancy, or motion sickness.",
+    "hindi_description": "गदबदाहट या उल्टी की इच्छा की भावना, अक्सर पाचन समस्याओं, गर्भावस्था, या गतिशीलता के साथ जुड़ी होती है।"
+  },
+  "Joint pain in great toe": {
+    "english_name": "Joint pain in great toe",
+    "hindi_name": "बड़े अंगूठे में जोड़ों का दर्द",
+    "english_description": "Pain experienced in the joint of the big toe, often due to conditions like gout or arthritis.",
+    "hindi_description": "बड़े अंगूठे के जोड़ में महसूस की जाने वाली दर्द, अक्सर गठिया या गठिया जैसी स्थितियों के कारण।"
+  },
+  "COPD": {
+    "english_name": "COPD",
+    "hindi_name": "सीओपीडी",
+    "english_description": "Chronic obstructive pulmonary disease, a progressive lung disease characterized by airflow obstruction and breathing difficulties.",
+    "hindi_description": "क्रमिक रूप से वायुमार्ग अवरोध और सांस लेने में कठिनाई की विशेषता वाली एक प्रगतिशील फेफड़ों की बीमारी।"
+  },
+  "Pain in rectal area": {
+    "english_name": "Pain in rectal area",
+    "hindi_name": "गुदा क्षेत्र में दर्द",
+    "english_description": "Discomfort or pain experienced in the area around the rectum, often due to hemorrhoids, anal fissures, or other conditions.",
+    "hindi_description": "गुदा के आसपास क्षेत्र में महसूस की जाने वाली असहजता या दर्द, अक्सर बवासीर, गुदाफांसों, या अन्य स्थितियों के कारण।"
+  },
+  "Pain in Lower Abdomen": {
+    "english_name": "Pain in Lower Abdomen",
+    "hindi_name": "निम्न पेट में दर्द",
+    "english_description": "Discomfort or pain experienced in the lower part of the abdomen, often due to digestive issues, menstrual cramps, or urinary tract problems.",
+    "hindi_description": "पेट के निम्न भाग में महसूस की जाने वाली असहजता या दर्द, अक्सर पाचन समस्याओं, मासिक धर्म से होने वाले कठिनाई, या मूत्रमार्ग समस्याओं के कारण होती है।"
+  },
+  "Difficulty in Concentrating": {
+    "english_name": "Difficulty in Concentrating",
+    "hindi_name": "ध्यान केंद्रित करने में कठिनाई",
+    "english_description": "Struggle or inability to focus attention on a task or activity, often due to distraction, stress, or neurological conditions.",
+    "hindi_description": "किसी कार्य या गतिविधि पर ध्यान केंद्रित करने में संघर्ष या असमर्थता, अक्सर विचलन, तनाव, या तंत्रिका स्थितियों के कारण होती है।"
+  },
+  "Nasal Discharge": {
+    "english_name": "Nasal Discharge",
+    "hindi_name": "नाक से निकलना",
+    "english_description": "Flow of mucus or fluid from the nose, often associated with colds, allergies, or sinus infections.",
+    "hindi_description": "नाक से मल या तरल पदार्थ का बहाव, अक्सर सर्दियों, एलर्जी, या नाक के गुहाओं के संक्रमण से जुड़ा होता है।"
+  },
+  "Stiffness": {
+    "english_name": "Stiffness",
+    "hindi_name": "अकड़न",
+    "english_description": "Reduced flexibility or mobility in the joints or muscles, often due to injury, inflammation, or arthritis.",
+    "hindi_description": "जोड़ों या मांसपेशियों में कम होती हुई लचीलापन या चलने की क्षमता, अक्सर चोट, सूजन, या गठिया के कारण होती है।"
+  },
+  "Sensitivity to Sound": {
+    "english_name": "Sensitivity to Sound",
+    "hindi_name": "ध्वनि के प्रति संवेदनशीलता",
+    "english_description": "Heightened awareness or discomfort in response to sounds, often indicative of auditory sensitivity or hearing issues.",
+    "hindi_description": "ध्वनियों के प्रति संवेदनशीलता या सुनने की समस्याओं का संकेत अक्सर सुनने की संवेदनशीलता या सुनने की समस्याओं का संकेत होता है।"
+  },
+  "Irritated mood": {
+    "english_name": "Irritated mood",
+    "hindi_name": "चिढ़ा हुआ मनोभाव",
+    "english_description": "Feeling easily annoyed or angered, often due to stress, fatigue, or emotional triggers.",
+    "hindi_description": "आसानी से चिढ़ाया या गुस्सा किया होने की भावना, अक्सर तनाव, थकान, या भावनात्मक उत्तेजकों के कारण होती है।"
+  },
+  "Joint Swelling": {
+    "english_name": "Joint Swelling",
+    "hindi_name": "जोड़ों का सूजन",
+    "english_description": "Enlargement or puffiness in the joints, often accompanied by pain, stiffness, or warmth.",
+    "hindi_description": "जोड़ों में बढ़ाव या सूजन, अक्सर दर्द, संकुचन, या गरमी के साथ।"
+  },
+  "Dizziness": {
+    "english_name": "Dizziness",
+    "hindi_name": "चक्कर आना",
+    "english_description": "Sensation of lightheadedness, unsteadiness, or spinning, often associated with inner ear issues, low blood pressure, or neurological conditions.",
+    "hindi_description": "सिर का भारीपन, अस्थिरता, या घूमने की अनुभूति, अक्सर अंतर्नाली समस्याओं, कम रक्तचाप, या तंत्रिका स्थितियों से जुड़ी होती है।"
+  },
+  "Shortness of breath": {
+    "english_name": "Shortness of breath",
+    "hindi_name": "सांस लेने की तकलीफ",
+    "english_description": "Feeling of being unable to breathe deeply or get enough air, often indicative of respiratory issues or heart problems.",
+    "hindi_description": "गहरी सांस लेने या पर्याप्त हवा प्राप्त न कर पाने की भावना, अक्सर श्वसनीय समस्याओं या हृदय समस्याओं का संकेत होती है।"
+  },
+  "Pressure around head": {
+    "english_name": "Pressure around head",
+    "hindi_name": "सिर के चारों ओर दबाव",
+    "english_description": "Sensation of tightness or discomfort around the head, often due to headaches, sinus issues, or stress.",
+    "hindi_description": "सिर के आसपास की कसावट या असहजता की भावना, अक्सर सिरदर्द, नाक के मुद्दे, या तनाव के कारण होती है।"
+  },
+  "Burning sensation during urination": {
+    "english_name": "Burning sensation during urination",
+    "hindi_name": "मूत्राशय के दौरान जलन की भावना",
+    "english_description": "Discomfort or pain felt during urination, often due to urinary tract infection or irritation.",
+    "hindi_description": "पेशाब करते समय महसूस की जाने वाली असहजता या दर्द, अक्सर मूत्रमार्ग संक्रमण या चिढ़ाव के कारण होती है।"
+  },
+  "Aura Symptoms": {
+    "english_name": "Aura Symptoms",
+    "hindi_name": "औरा के लक्षण",
+    "english_description": "Perceptual disturbances often preceding migraines, including visual changes, sensory sensitivity, or other neurological symptoms.",
+    "hindi_description": "माइग्रेन से पहले अधिग्रहणीय विकृतियाँ, जिसमें दृश्य परिवर्तन, इंद्रिय संवेदनशीलता, या अन्य तंत्रिका लक्षण शामिल हैं।"
+  },
+  "Vomiting": {
+    "english_name": "Vomiting",
+    "hindi_name": "उल्टी",
+    "english_description": "Forceful expulsion of stomach contents through the mouth, often due to nausea, illness, or gastrointestinal issues.",
+    "hindi_description": "मुँह से पेट की सामग्री का जोरदार उद्धारण, अक्सर मतली, बीमारी, या गैस्ट्रोइंटेस्टाइनल समस्याओं के कारण होता है।"
+  },
+  "Acute Gastroenteritis": {
+    "english_name": "Acute Gastroenteritis",
+    "hindi_name": "तेज गैस्ट्रोएंटेराइटिस",
+    "english_description": "Sudden onset of inflammation in the stomach and intestines, typically causing diarrhea, vomiting, abdominal cramps, and sometimes fever.",
+    "hindi_description": "पेट और आंतों में आकस्मिक प्रदाह, जो आमतौर पर दस्त, उलटी, पेट में दर्द और कभी-कभी बुखार का कारण बनता है।"
+  },
+  "Headache": {
+    "english_name": "Headache",
+    "hindi_name": "सिरदर्द",
+    "english_description": "Pain or discomfort in the head or upper neck.",
+    "hindi_description": "सिर या ऊपरी गर्दन में दर्द या असहायता।"
+  },
+  "Drug Reaction": {
+    "english_name": "Drug Reaction",
+    "hindi_name": "दवा का प्रतिक्रिया",
+    "english_description": "Adverse response to medication, manifesting as various symptoms or signs.",
+    "hindi_description": "दवाई के विपरीत प्रतिक्रिया, विभिन्न लक्षणों या संकेतों के रूप में प्रकट होता है।"
+  },
+  "Sneezing": {
+    "english_name": "Sneezing",
+    "hindi_name": "छींकना",
+    "english_description": "Forceful expulsion of air through the nose and mouth caused by irritation to the mucous membranes of the nose or throat.",
+    "hindi_description": "नाक या गले की ऊतकों को चिढ़ाने से नाक और मुंह के माध्यम से वायु का शक्तिशाली निकालना।"
+  },
+  "Heart Burn": {
+    "english_name": "Heart Burn",
+    "hindi_name": "दिल की जलन",
+    "english_description": "Burning sensation or discomfort felt behind the sternum due to acid reflux into the esophagus.",
+    "hindi_description": "अमाशय में अम्ल पुनर्निर्गमन से स्टरन के पीछे महसूस की जाने वाली जलन या असहायता।"
+  },
+  "Chills and Rigour": {
+    "english_name": "Chills and Rigour",
+    "hindi_name": "ठंड और तनाव",
+    "english_description": "Sudden and intense feeling of cold, often accompanied by shivering and rigidity of the body.",
+    "hindi_description": "अचानक और तेज ठंड की अनुभूति, जिसे अक्सर कंपन और शरीर की कड़ाहट के साथ देखा जाता है।"
+  },
+  "Itching in anal region": {
+    "english_name": "Itching in anal region",
+    "hindi_name": "मलाशय क्षेत्र में खुजली",
+    "english_description": "Unpleasant sensation that provokes the desire to scratch around the anus.",
+    "hindi_description": "एनस के आसपास खुजलाने की इच्छा को प्रेरित करने वाली अप्रिय अनुभूति।"
+  },
+  "Nasal Congestion": {
+    "english_name": "Nasal Congestion",
+    "hindi_name": "नाक की बंद होना",
+    "english_description": "Blockage or obstruction of the nasal passages, leading to difficulty in breathing through the nose.",
+    "hindi_description": "नाक के गलियों का बंद होना या रोका, जिससे नाक से सांस लेने में कठिनाई होती है।"
+  },
+  "Gastritis": {
+    "english_name": "Gastritis",
+    "hindi_name": "गैस्ट्राइटिस",
+    "english_description": "Inflammation of the lining of the stomach, often causing nausea, abdominal pain, and indigestion.",
+    "hindi_description": "पेट की लाइनिंग का सूजन, जिससे अक्सर मतली, पेट में दर्द और पाचन की समस्या होती है।"
+  },
+  "Limited range of motion": {
+    "english_name": "Limited range of motion",
+    "hindi_name": "चलने की सीमित रेंज",
+    "english_description": "Reduced ability to move a joint or body part through its full range of motion.",
+    "hindi_description": "अपने पूर्ण चलने की सीमा के माध्यम से किसी जोड़ या शरीर के हिस्से को हिलाने की क्षमता में कमी।"
+  },
+  "Tenderness of Joint": {
+    "english_name": "Tenderness of Joint",
+    "hindi_name": "संयुक्त की कोमलता",
+    "english_description": "Pain or discomfort experienced when pressure is applied to a joint.",
+    "hindi_description": "जब किसी संयुक्त पर दबाव डाला जाता है, तो दर्द या असहायता का अनुभव होता है।"
+  },
+  "Rheumatoid Arthritis": {
+    "english_name": "Rheumatoid Arthritis",
+    "hindi_name": "रुमेटॉइड आर्थराइटिस",
+    "english_description": "Chronic inflammatory disorder affecting joints, leading to pain, swelling, and stiffness.",
+    "hindi_description": "संयुक्तों को प्रभावित करने वाला ज्ञात ग्रंथिक ज्वर, जिससे दर्द, सूजन और कठिनाई होती है।"
+  },
+  "Haemorrhoids(Piles)": {
+    "english_name": "Haemorrhoids(Piles)",
+    "hindi_name": "बवासीर",
+    "english_description": "Swollen and inflamed veins in the rectum and anus, often causing discomfort, bleeding, and itching.",
+    "hindi_description": "गुदा और मलाशय में सूजन और सूजन, अक्सर असहायता, खूनी और खुजली का कारण बनते हैं।"
+  },
+  "Lung Abcess": {
+    "english_name": "Lung Abcess",
+    "hindi_name": "फेफड़ों का गांठ",
+    "english_description": "Collection of pus in the lung tissue, often caused by bacterial infection.",
+    "hindi_description": "फेफड़ों की कोशिकाओं में पस पूलीकरण, अक्सर जीवाणु संक्रमण के कारण होता है।"
+  },
+  "Difficulty in sleep": {
+    "english_name": "Difficulty in sleep",
+    "hindi_name": "नींद में कठिनाई",
+    "english_description": "Challenges in falling asleep or staying asleep, resulting in inadequate rest.",
+    "hindi_description": "नींद आने या रहने में चुनौतियां, जिससे अपर्याप्त आराम होता है।"
+  },
+  "Pharyngitis": {
+    "english_name": "Pharyngitis",
+    "hindi_name": "फैरिंजाइटिस",
+    "english_description": "Inflammation of the pharynx, often causing sore throat, discomfort, and difficulty swallowing.",
+    "hindi_description": "फैरिंक्स का सूजन, जो अक्सर गले में दर्द, असहायता और पिने में कठिनाई का कारण बनता है।"
+  },
+  "Unilateral Pain": {
+    "english_name": "Unilateral Pain",
+    "hindi_name": "एकपक्षीय दर्द",
+    "english_description": "Pain experienced on only one side of the body.",
+    "hindi_description": "केवल शरीर के एक ही पक्ष पर अनुभवित दर्द।"
+  },
+  "Gout": {
+    "english_name": "Gout",
+    "hindi_name": "गठिया",
+    "english_description": "Type of arthritis characterized by sudden and severe pain, swelling, and tenderness in the joints.",
+    "hindi_description": "ऐसा प्रकार का गठिया जो अचानक और तेज दर्द, सूजन और संयुक्तों में कोमलता से चरित है।"
+  },
+  "Tuberculosis": {
+    "english_name": "Tuberculosis",
+    "hindi_name": "टीबी",
+    "english_description": "Infectious bacterial disease affecting the lungs, causing symptoms such as coughing, chest pain, and weight loss.",
+    "hindi_description": "फेफड़ों को प्रभावित करने वाली संक्रामक जीवाणु रोग, जिसमें खांसी, सीने में दर्द और वजन कमी जैसे लक्षण होते हैं।"
+  },
+  "Mucus discharge": {
+    "english_name": "Mucus discharge",
+    "hindi_name": "मल निकास",
+    "english_description": "Release of slimy secretion from the mucous membranes, often occurring in the respiratory or digestive tract.",
+    "hindi_description": "मुख्य में श्वसन या पाचन तंत्र में होने वाले मूक्ति से स्लाइमी छूट।"
+  },
+  "Dengue": {
+    "english_name": "Dengue",
+    "hindi_name": "डेंगू",
+    "english_description": "Mosquito-borne viral infection causing fever, headache, muscle and joint pain, and rash.",
+    "hindi_description": "मच्छर से होने वाली वायरल संक्रमण जिससे बुखार, सिरदर्द, मांसपेशियों और संयुक्तों में दर्द और खुजली होती है।"
+  },
+  "I have no other symptom": {
+    "english_name": "I have no other symptom",
+    "hindi_name": "मेरे पास कोई और लक्षण नहीं है",
+    "english_description": "I have no other symptom",
+    "hindi_description": "मेरे पास कोई और लक्षण नहीं है।"
+  },
+  "Muscle weakness": {
+    "english_name": "Muscle weakness",
+    "hindi_name": "मांसपेशियों की कमजोरी",
+    "english_description": "Reduced strength or ability of the muscles to perform tasks.",
+    "hindi_description": "मांसपेशियों की कमजोरी या क्षमता में कमी।"
+  },
+  "Throat Pain": {
+    "english_name": "Throat Pain",
+    "hindi_name": "गले में दर्द",
+    "english_description": "Discomfort or pain experienced in the throat, often worsened by swallowing.",
+    "hindi_description": "गले में असहायता या दर्द का अनुभव, जिसे गला साफ करने से अक्सर बढ़ाया जाता है।"
+  },
+  "Sensitivity to Light": {
+    "english_name": "Sensitivity to Light",
+    "hindi_name": "प्रकाश के प्रति संवेदनशीलता",
+    "english_description": "Increased discomfort or pain in response to exposure to light.",
+    "hindi_description": "प्रकाश के संपर्क में वृद्धि होती असहायता या दर्द।"
+  },
+  "Throbbing Pain": {
+    "english_name": "Throbbing Pain",
+    "hindi_name": "धड़कता दर्द",
+    "english_description": "Pain characterized by rhythmic pulsations or throbs.",
+    "hindi_description": "नियमित धमकी या धड़कनों द्वारा चरित दर्द।"
+  },
+  "Loss of Smell": {
+    "english_name": "Loss of Smell",
+    "hindi_name": "सूँघने की क्षमता में हानि",
+    "english_description": "Reduced or complete inability to detect odors.",
+    "hindi_description": "गंधों की पहचान की अनुपस्थिति या पूरी अक्षमता।"
+  },
+  "Sore Throat": {
+    "english_name": "Sore Throat",
+    "hindi_name": "खराश वाला गला",
+    "english_description": "Pain, scratchiness, or irritation in the throat.",
+    "hindi_description": "गले में दर्द, खुजली, या चिढ़ान।"
+  },
+  "Depression": {
+    "english_name": "Depression",
+    "hindi_name": "डिप्रेशन",
+    "english_description": "Persistent feeling of sadness, hopelessness, and loss of interest or pleasure in activities.",
+    "hindi_description": "दु: ख, निराशा और गतिविधियों में रुचि या आनंद की हानि की लगातार भावना।"
+  },
+  "Vertigo": {
+    "english_name": "Vertigo",
+    "hindi_name": "चक्कर",
+    "english_description": "Sensation of spinning or movement, often associated with dizziness or imbalance.",
+    "hindi_description": "घूमने या गति की अनुभूति, जो अक्सर चक्कर या असंतुलन के साथ जुड़ी होती है।"
+  },
+  "Nodule": {
+    "english_name": "Nodule",
+    "hindi_name": "गांठ",
+    "english_description": "Small, rounded mass or lump, often found beneath the skin or in organs.",
+    "hindi_description": "छोटा, गोल भार या गांठ, जो अक्सर त्वचा के नीचे या अंगों में पाया जाता है।"
+  }
+}
