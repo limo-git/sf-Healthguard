@@ -1,9 +1,13 @@
 {
   "zone_1": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 61900,
+    "population": 68520,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -21,10 +25,14 @@
     "last_E": 3245
   },
   "zone_2": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 60457,
+    "population": 67591,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -42,10 +50,14 @@
     "last_E": 3387
   },
   "zone_3": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 59585,
+    "population": 65980,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -63,10 +75,14 @@
     "last_E": 11573
   },
   "zone_4": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 54697,
+    "population": 62862,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -84,10 +100,14 @@
     "last_E": 3420
   },
   "zone_5": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 51008,
+    "population": 48113,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -105,10 +125,14 @@
     "last_E": 6862
   },
   "zone_6": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 49796,
+    "population": 43829,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -126,10 +150,14 @@
     "last_E": 5915
   },
   "zone_7": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 44378,
+    "population": 41823,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -147,10 +175,14 @@
     "last_E": 10934
   },
   "zone_8": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 41794,
+    "population": 40401,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -168,10 +200,14 @@
     "last_E": 2798
   },
   "zone_9": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 38097,
+    "population": 38790,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
@@ -189,10 +225,14 @@
     "last_E": 13881
   },
   "zone_10": {
+<<<<<<< Updated upstream
     "beta": 0.32485701168842396,
+=======
+    "beta": 0.303,
+>>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 35383,
+    "population": 31205,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
