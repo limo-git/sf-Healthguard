@@ -366,39 +366,54 @@ export class CollaborationRenderer {
       </div>
     `
   }
-
   renderInitialMessages() {
-    return `
-      <div class="message-item priority-high">
-        <div class="message-header">
-          <div class="message-sender">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=sarah" alt="Dr. Sarah Chen" class="sender-avatar">
-            <div>
-              <div class="sender-name">Dr. Sarah Chen</div>
-              <div class="sender-type">Health Official</div>
+    return (
+      <>
+        <div className="message-item priority-high">
+          <div className="message-header">
+            <div className="message-sender">
+              <img
+                src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg"
+                alt="Dr. Sarah Chen"
+                className="sender-avatar"
+              />
+              <div>
+                <div className="sender-name">Dr. Sarah Chen</div>
+                <div className="sender-type">Health Official</div>
+              </div>
             </div>
+            <div className="message-time">2 hours ago</div>
           </div>
-          <div class="message-time">2 hours ago</div>
+          <div className="message-content">
+            Updated COVID-19 testing protocols are now available. Please review the new guidelines for contact tracing procedures.
+          </div>
+          <div className="message-channel">Channel: clinical</div>
         </div>
-        <div class="message-content">Updated COVID-19 testing protocols are now available. Please review the new guidelines for contact tracing procedures.</div>
-        <div class="message-channel">Channel: clinical</div>
-      </div>
-      <div class="message-item priority-normal">
-        <div class="message-header">
-          <div class="message-sender">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=michael" alt="Nurse Michael Rodriguez" class="sender-avatar">
-            <div>
-              <div class="sender-name">Nurse Michael Rodriguez</div>
-              <div class="sender-type">Healthcare Provider</div>
+
+        <div className="message-item priority-normal">
+          <div className="message-header">
+            <div className="message-sender">
+              <img
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                alt="Nurse Michael Rodriguez"
+                className="sender-avatar"
+              />
+              <div>
+                <div className="sender-name">Nurse Michael Rodriguez</div>
+                <div className="sender-type">Healthcare Provider</div>
+              </div>
             </div>
+            <div className="message-time">4 hours ago</div>
           </div>
-          <div class="message-time">4 hours ago</div>
+          <div className="message-content">
+            Hospital capacity update: We have 15 available beds in the general ward and 3 in ICU.
+          </div>
+          <div className="message-channel">Channel: logistics</div>
         </div>
-        <div class="message-content">Hospital capacity update: We have 15 available beds in the general ward and 3 in ICU.</div>
-        <div class="message-channel">Channel: logistics</div>
-      </div>
-    `
+      </>
+    );
   }
+
 
   renderInitialAlerts() {
     return `

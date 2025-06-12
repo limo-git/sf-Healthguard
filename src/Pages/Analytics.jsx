@@ -86,57 +86,64 @@ const getZoneDataByCoordinates = (lat, long, zoneData) => {
   return zoneData.find(zone => zone.zone === closestZone);
 };
 const generateAnalyticsData = (zoneDataArray) => {
-  if (!zoneDataArray || zoneDataArray.length === 0) return {};
-  console.log(zoneDataArray[0]);
+  if (!zoneDataArray || zoneDataArray.length === 0) {
+    return {};
+  }
 
-  // Sort zoneDataArray by date (latest last)
-  const sortedData = zoneDataArray;
-  const todayEntry = sortedData[sortedData.length - 1];
-  const yesterdayEntry = sortedData[sortedData.length - 2];
+  // 1. Aggregate new_cases by date
+  const dailyTotalsMap = zoneDataArray.reduce((acc, { date, new_cases }) => {
+    acc[date] = (acc[date] || 0) + new_cases;
+    return acc;
+  }, {});
 
-  const getTotalCases = (entry) =>
-    Object.keys(entry)
-      .filter(key => key.startsWith("zone_"))
-      .reduce((sum, key) => sum + (entry[key] || 0), 0);
+  // 2. Convert to sorted array of { date, total }
+  const sortedDates = Object.keys(dailyTotalsMap)
+    .sort((a, b) => new Date(a) - new Date(b));
+  const dailyData = sortedDates.map(date => ({
+    date,
+    total: dailyTotalsMap[date]
+  }));
 
-  // 1. Total new cases for today
-  const newCases24h = getTotalCases(todayEntry);
-  console.log(newCases24h);
-  console.log(todayEntry);
+  // 3. Identify today and yesterday entries
+  const lastIndex = dailyData.length - 1;
+  const todayEntry = dailyData[lastIndex];
+  const yesterdayEntry = dailyData[lastIndex - 1] || { total: 0 };
 
-  // 2. Total new cases for yesterday
-  const newCasesYesterday = getTotalCases(yesterdayEntry);
+  const newCases24h = todayEntry.total;
+  const newCasesYesterday = yesterdayEntry.total;
 
-  // 3. New case percentage change
+  // 4. Percent change vs. yesterday
   const changePercent = ((newCases24h - newCasesYesterday) / (newCasesYesterday || 1)) * 100;
   const newCasesChange = `${changePercent > 0 ? '+' : ''}${changePercent.toFixed(1)}% from yesterday`;
 
-  // 4. Active cases = sum of all cases in the last 14 days
-  const last14 = sortedData.slice(-14);
-  const activeCases = last14.reduce((total, entry) => total + getTotalCases(entry), 0);
+  // 5. Active cases = sum over last 14 days
+  const last14 = dailyData.slice(-14);
+  const activeCases = last14.reduce((sum, { total }) => sum + total, 0);
 
-  // 5. Past week total (last 7 days)
-  const last7 = sortedData.slice(-7);
-  const pastweek = last7.reduce((total, entry) => total + getTotalCases(entry), 0);
+  // 6. Past week total (last 7 days)
+  const pastweek = dailyData
+    .slice(-7)
+    .reduce((sum, { total }) => sum + total, 0);
 
-  // 6. R Number status (example logic: rising if more today than 3 days ago)
-  const threeDaysAgoEntry = sortedData[sortedData.length - 4];
-  const rNumberStatus = (getTotalCases(todayEntry) > getTotalCases(threeDaysAgoEntry))
-    ? 'Above threshold' : 'Stable';
+  // 7. R‑Number status (compare today vs. three days ago)
+  const threeDaysAgoEntry = dailyData[lastIndex - 3] || { total: 0 };
+  const rNumberStatus = todayEntry.total > threeDaysAgoEntry.total
+    ? 'Above threshold'
+    : 'Stable';
 
+  // 8. Build the final summary object
   return {
     newCases24h,
     newCasesChange,
     activeCases,
+    changePercent,
     activeCasesDescription: 'Total over last 14 days',
     pastweek,
     rNumberStatus,
-    // Removed fake/random values
     positivityRate: null,
     positivityRateDescription: null,
     hospitalizationsDescription: null,
     pastday: null,
-    // Removed charts: You can add if needed
     epidemiologicalData: [],
     clinicalData: [],
     mobilityData: [],
@@ -158,7 +165,8 @@ const generateAnalyticsData = (zoneDataArray) => {
       }
     ]
   };
-};
+}
+
 
 
 const Analytics = () => {
@@ -176,118 +184,208 @@ const Analytics = () => {
   const [demographicsChartData, setDemographicsChartData] = useState([]);
   const [socialMediaChartData, setSocialMediaChartData] = useState([]);
   const [activeAlerts, setActiveAlerts] = useState([]);
-
-  useEffect(() => {
-    // Generate dummy data for overview section
-    var dummyData = {};
+  // alongside your other useState calls
+const [zoneDistData, setZoneDistData] = useState([]);
 
 
-    // Fetch and process the CSV data (existing logic)
-    fetch('/data/data.csv')
-      .then(response => response.text())
-      .then(csvText => {
-        const rows = csvText.split('\n').slice(1); // Skip header
-        const parsedData = rows.map(row => {
-          const [, date, zone, new_cases] = row.split(',');
-          return {
-            date,
-            zone,
-            new_cases: parseInt(new_cases)
-          };
-        });
-        console.log("here");
-        setData(parsedData);
-        
-        // Process data for zone-based visualization
-        const zoneStats = {};
-        
-        parsedData.forEach(item => {
-          if (!zoneStats[item.zone]) {
-            zoneStats[item.zone] = {
-              population:0,
-              total_cases: 0,
-              max_cases: 0,
-              avg_cases: 0,
-              count: 0
-            };
-          }
-          zoneStats[item.zone].total_cases += item.new_cases;
-          zoneStats[item.zone].max_cases = Math.max(zoneStats[item.zone].max_cases, item.new_cases);
-          zoneStats[item.zone].count++;
-        });
 
-        // Calculate averages and format data
-        const zoneDataArray = Object.entries(zoneStats).map(([zone, stats]) => ({
-          zone,
-          total_cases: stats.total_cases,
-          max_cases: stats.max_cases,
-          population:stats.population,
-          avg_cases: Math.round(stats.total_cases / stats.count),
-          lat: ZONE_COORDINATES[zone]?.lat || 0,
-          long: ZONE_COORDINATES[zone]?.long || 0,
-        }));
 
-        dummyData = generateAnalyticsData(zoneDataArray);
-        
-        setOverviewData(dummyData);
-        setEpidemiologicalTrendsData(dummyData.epidemiologicalData);
-        setClinicalChartData(dummyData.clinicalData);
-        setMobilityChartData(dummyData.mobilityData);
-        setEnvironmentalChartData(dummyData.environmentalData);
-        setDemographicsChartData(dummyData.demographicsData);
-        setSocialMediaChartData(dummyData.socialMediaData);
-        setActiveAlerts(dummyData.activeAlerts);
-        setZoneData(zoneDataArray);
+  // ──────────────────────────────────────────────────────
+// 1. New state hooks (alongside your existing ones)
+// ──────────────────────────────────────────────────────
+const [everyDayData, setEveryDayData]       = useState([]);
+const [dailyCaseCounts, setDailyCaseCounts] = useState([]);
+const [genderDistData, setGenderDistData]   = useState([]);
+const [ageDistData, setAgeDistData]         = useState([]);
 
-        // Process time series data
-        const timeSeries = {};
-        parsedData.forEach(item => {
-          if (!timeSeries[item.date]) {
-            timeSeries[item.date] = {};
-          }
-          timeSeries[item.date][item.zone] = item.new_cases;
-        });
+// ──────────────────────────────────────────────────────
+// 2. New useEffect: fetch + parse your every_day_chart.csv
+// ──────────────────────────────────────────────────────
+useEffect(() => {
+  fetch('/data/every_day_data.csv')
+    .then(res => {
+      if (!res.ok) throw new Error(`every_day_chart load error: ${res.status}`);
+      return res.text();
+    })
+    .then(csvText => {
+      // Parse rows
+      const rows = csvText.trim().split('\n').slice(1);
+      const parsed = rows.map(row => {
+        const [, date, zone, gender, age] = row.split(',');
+        return { date, zone, gender, age: Number(age) };
+      });
+      setEveryDayData(parsed);
 
-        const timeSeriesArray = Object.entries(timeSeries).map(([date, zones]) => ({
-          date,
-          ...zones
-        }));
+      // 2.1 Aggregate daily case counts
+      const countsMap = parsed.reduce((map, { date }) => {
+        map[date] = (map[date] || 0) + 1;
+        return map;
+      }, {});
+      setDailyCaseCounts(
+        Object.entries(countsMap).map(([date, count]) => ({ date, Cases: count }))
+      );
 
-        setTimeSeriesData(timeSeriesArray);
+      // 2.2 Gender distribution for PieChart
+      const genderMap = parsed.reduce((map, { gender }) => {
+        map[gender] = (map[gender] || 0) + 1;
+        return map;
+      }, {});
+      setGenderDistData(
+        Object.entries(genderMap).map(([name, value]) => ({ name, value }))
+      );
 
-        // Generate heatmap data
-        const maxCases = Math.max(...zoneDataArray.map(z => z.total_cases || 0));
-        const heatmapPoints = zoneDataArray.map(zone => {
-          const totalCases = zone.total_cases || 0;
-          return {
-            ...zone,
-            radius: calculateRadius(totalCases),
-            intensity: totalCases / (maxCases || 1)
-          };
-        });
+      // 2.3 Age bins for BarChart
+      const bins = { '0-18': 0, '19-35': 0, '36-60': 0, '60+': 0 };
+      parsed.forEach(({ age }) => {
+        if (age <= 18) bins['0-18']++;
+        else if (age <= 35) bins['19-35']++;
+        else if (age <= 60) bins['36-60']++;
+        else bins['60+']++;
+      });
+      setAgeDistData(
+        Object.entries(bins).map(([name, value]) => ({ name, value }))
+      );
 
-        setHeatmapData(heatmapPoints);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error loading data:', error);
-        setLoading(false);
+      // 2.4 Zone breakdown
+const zoneCountMap = parsed.reduce((acc, { zone }) => {
+  acc[zone] = (acc[zone] || 0) + 1;
+  return acc;
+}, {});
+setZoneDistData(
+  Object.entries(zoneCountMap).map(([name, value]) => ({ name, value }))
+);
+
+    })
+    .catch(err => console.error(err));
+}, []);
+
+
+  
+useEffect(() => {
+  setLoading(true);
+
+  // Step 1: Fetch & parse CSV
+  fetch('/data/data.csv')
+    .then(res => {
+      if (!res.ok) throw new Error(`CSV load error: ${res.status}`);
+      return res.text();
+    })
+    .then(csvText => {
+      const rows = csvText.trim().split('\n').slice(1);
+      const parsedData = rows.map(row => {
+        const [, date, zone, new_cases] = row.split(',');
+        return { date, zone, new_cases: Number(new_cases) };
+      });
+      setData(parsedData);
+
+      // Step 2: Build zoneStats
+      const zoneStats = {};
+      parsedData.forEach(({ zone, new_cases }) => {
+        if (!zoneStats[zone]) {
+          zoneStats[zone] = { total_cases: 0, max_cases: 0, count: 0 };
+        }
+        zoneStats[zone].total_cases += new_cases;
+        zoneStats[zone].max_cases = Math.max(zoneStats[zone].max_cases, new_cases);
+        zoneStats[zone].count++;
       });
 
-    const fetchData = async () => {
-      try {
-        // Fetch data from the new /prediction route
-        const response = await fetch('/prediction');
-        const result = await response.json();
-        // Assuming the response structure is { data: [...] }
-        setZoneData(result.data); 
-      } catch (error) {
-        console.error('Error fetching zone data:', error);
-      }
-    };
+      // Step 3: Generate analytics & time‑series
+      const analytics = generateAnalyticsData(parsedData);
+      setOverviewData(analytics);
+      setEpidemiologicalTrendsData(analytics.epidemiologicalData);
+      setClinicalChartData(analytics.clinicalData);
+      setMobilityChartData(analytics.mobilityData);
+      setEnvironmentalChartData(analytics.environmentalData);
+      setDemographicsChartData(analytics.demographicsData);
+      setSocialMediaChartData(analytics.socialMediaData);
+      setActiveAlerts(analytics.activeAlerts);
 
-    fetchData();
-  }, []);
+      const timeSeriesMap = {};
+      parsedData.forEach(({ date, zone, new_cases }) => {
+        timeSeriesMap[date] = timeSeriesMap[date] || {};
+        timeSeriesMap[date][zone] = new_cases;
+      });
+      setTimeSeriesData(
+        Object.entries(timeSeriesMap).map(([date, zones]) => ({ date, ...zones }))
+      );
+
+      // Step 4: Fetch & normalize prediction API
+      return fetch('http://localhost:5000/prediction')
+        .then(res => {
+          if (!res.ok) throw new Error(`Prediction API error: ${res.status}`);
+          return res.json();
+        })
+        .then(raw => {
+          console.log('Raw prediction payload:', raw);
+
+          // Normalize whatever envelope your API uses
+          let predictionArray;
+          if (Array.isArray(raw)) {
+            predictionArray = raw;
+          } else if (Array.isArray(raw.data)) {
+            predictionArray = raw.data;
+          } else if (Array.isArray(raw.predictions)) {
+            predictionArray = raw.predictions;
+          } else {
+            predictionArray = Object.entries(raw).map(([zone, info]) => ({
+              zone,
+              population: info.population,
+              outbreak:   info.outbreak,
+              epidemic:   info.epidemic
+            }));
+          }
+
+          console.log('Normalized predictionArray:', predictionArray);
+
+          // Build lookup map
+          const predMap = predictionArray.reduce((m, { zone, population, outbreak, epidemic }) => {
+            m[zone] = { population, outbreak, epidemic };
+            return m;
+          }, {});
+
+          console.log('Prediction lookup map:', predMap);
+
+          // Step 5: Merge stats + predictions
+          const zoneDataArray = Object.entries(zoneStats).map(([zone, stats]) => {
+            const { population = 0, outbreak = null, epidemic = null } = predMap[zone] || {};
+            return {
+              zone,
+              total_cases: stats.total_cases,
+              max_cases:   stats.max_cases,
+              population,
+              avg_cases:   Math.round(stats.total_cases / stats.count),
+              outbreak,
+              epidemic,
+              lat:  ZONE_COORDINATES[zone]?.lat  || 0,
+              long: ZONE_COORDINATES[zone]?.long || 0,
+            };
+          });
+          setZoneData(zoneDataArray);
+
+          // Step 6: Build heatmap from API 'outbreak' field
+          const maxOutbreak = Math.max(
+            ...predictionArray.map(p => (typeof p.outbreak === 'number' ? p.outbreak : 0))
+          );
+          const heatmapPoints = predictionArray.map(({ zone, outbreak }) => ({
+            zone,
+            lat:       ZONE_COORDINATES[zone]?.lat  || 0,
+            long:      ZONE_COORDINATES[zone]?.long || 0,
+            radius:    calculateRadius(outbreak || 0),
+            intensity: (outbreak || 0) / (maxOutbreak || 1),
+          }));
+          setHeatmapData(heatmapPoints);
+          console.log('Heatmap data (from API):', heatmapPoints);
+
+          setLoading(false);
+        });
+    })
+    .catch(err => {
+      console.error('Data load error:', err);
+      setLoading(false);
+    });
+}, []);
+
+
 
   if (loading) {
     return <div className="flex items-center justify-center h-screen">Loading...</div>;
@@ -428,198 +526,102 @@ const Analytics = () => {
                 </svg>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">{overviewData?.rNumber}</div>
+                <div className="text-2xl font-bold">{overviewData?.changePercent.toFixed(2)}%</div>
                 <p className="text-xs text-muted-foreground">
                   {overviewData?.pastday}
                 </p>
               </CardContent>
             </Card>
           </div>
-          <div className="grid gap-4 md:grid-cols-1">
-            <Card>
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">POSITIVITY RATE</CardTitle>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="h-4 w-4 text-muted-foreground"
-                >
-                  <path d="M5 20v-4h4v4zm6-2h4v2h-4zm6-4h4v4h-4zm-6-4h4v4h-4zm-6-4h4v4H5zm6-4h4v4h-4z" />
-                </svg>
-              </CardHeader>
-              <CardContent>
-                <div className="text-2xl font-bold">{overviewData?.positivityRate}</div>
-                <p className="text-xs text-muted-foreground">
-                  {overviewData?.positivityRateDescription}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Epidemiological Trends</CardTitle>
-              </CardHeader>
-              <CardContent className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={epidemiologicalTrendsData}
-                    margin={{
-                      top: 5,
-                      right: 10,
-                      left: 10,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis yAxisId="left" />
-                    <YAxis yAxisId="right" orientation="right" />
-                    <RechartsTooltip />
-                    <Legend />
-                    <Line yAxisId="left" type="monotone" dataKey="New Cases" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    <Line yAxisId="right" type="monotone" dataKey="Active Cases" stroke="#82ca9d" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Clinical Data</CardTitle>
-              </CardHeader>
-              <CardContent className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={clinicalChartData}
-                    margin={{
-                      top: 5,
-                      right: 10,
-                      left: 10,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis />
-                    <RechartsTooltip />
-                    <Legend />
-                    <Bar dataKey="Hospitalizations" fill="#8884d8" />
-                    <Bar dataKey="ICU Occupancy" fill="#82ca9d" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Mobility Patterns</CardTitle>
-              </CardHeader>
-              <CardContent className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={mobilityChartData}
-                    margin={{
-                      top: 5,
-                      right: 10,
-                      left: 10,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis />
-                    <RechartsTooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="Public Transport" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="Retail & Recreation" stroke="#82ca9d" />
-                    <Line type="monotone" dataKey="Workplace" stroke="#ffc658" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Environmental Factors</CardTitle>
-              </CardHeader>
-              <CardContent className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={environmentalChartData}
-                    margin={{
-                      top: 5,
-                      right: 10,
-                      left: 10,
-                      bottom: 5,
-                    }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis yAxisId="temp" />
-                    <YAxis yAxisId="humidity" orientation="right" />
-                    <RechartsTooltip />
-                    <Legend />
-                    <Line yAxisId="temp" type="monotone" dataKey="Temperature (°C)" stroke="#ff7300" />
-                    <Line yAxisId="humidity" type="monotone" dataKey="Humidity (%)" stroke="#387900" />
-                  </LineChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Demographics</CardTitle>
-              </CardHeader>
-              <CardContent className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={demographicsChartData}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      outerRadius={80}
-                      fill="#8884d8"
-                      dataKey="value"
-                      nameKey="name"
-                      label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                    >
-                      {demographicsChartData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                      ))}
-                    </Pie>
-                    <RechartsTooltip />
-                    <Legend />
-                  </PieChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle>Social Media Sentiment</CardTitle>
-              </CardHeader>
-              <CardContent className="h-[300px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={socialMediaChartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis yAxisId="mentions" />
-                    <YAxis yAxisId="sentiment" orientation="right" domain={[-1, 1]} />
-                    <RechartsTooltip />
-                    <Legend />
-                    <Bar yAxisId="mentions" dataKey="Health Mentions" fill="#8884d8" />
-                    <Line yAxisId="sentiment" type="monotone" dataKey="Sentiment Score" stroke="#82ca9d" />
-                  </BarChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-          </div>
+  {/* Weekly Trends → now shows daily case counts */}
+  <Card>
+    <CardHeader>
+      <CardTitle>Daily Case Trends</CardTitle>
+    </CardHeader>
+    <CardContent className="h-[300px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={dailyCaseCounts} margin={{ top:5, right:10, left:10, bottom:5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <RechartsTooltip />
+          <Legend />
+          <Line type="monotone" dataKey="Cases" stroke="#8884d8" activeDot={{ r: 8 }} />
+        </LineChart>
+      </ResponsiveContainer>
+    </CardContent>
+  </Card>
+
+  {/* Clinical Data → gender breakdown instead */}
+  <Card>
+    <CardHeader>
+      <CardTitle>Gender Distribution</CardTitle>
+    </CardHeader>
+    <CardContent className="h-[300px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart>
+          <Pie
+            data={genderDistData}
+            cx="50%" cy="50%"
+            outerRadius={80}
+            dataKey="value"
+            nameKey="name"
+            label={({ name, percent }) => `${name}: ${(percent*100).toFixed(0)}%`}
+          >
+            {genderDistData.map((_, idx) => (
+              <Cell key={idx} fill={COLORS[idx % COLORS.length]} />
+            ))}
+          </Pie>
+          <RechartsTooltip />
+          <Legend />
+        </PieChart>
+      </ResponsiveContainer>
+    </CardContent>
+  </Card>
+</div>
+
+<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
+  {/* Mobility Patterns → Age Distribution bar chart */}
+  <Card>
+    <CardHeader>
+      <CardTitle>Age Distribution</CardTitle>
+    </CardHeader>
+    <CardContent className="h-[300px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={ageDistData} margin={{ top:5, right:10, left:10, bottom:5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <RechartsTooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    </CardContent>
+  </Card>
+
+  {/* Environmental Factors → you can repurpose for zone breakdown, etc. */}
+<Card>
+  <CardHeader>
+    <CardTitle>Zone Case Breakdown</CardTitle>
+  </CardHeader>
+  <CardContent className="h-[300px]">
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={zoneDistData} margin={{ top:5, right:10, left:10, bottom:5 }}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <RechartsTooltip />
+        <Legend />
+        <Bar dataKey="value" fill="#8884d8" />
+      </BarChart>
+    </ResponsiveContainer>
+  </CardContent>
+</Card>
+
+</div>
+
           <div className="grid gap-4 md:grid-cols-1">
             <Card>
               <CardHeader>
