@@ -2,7 +2,7 @@ import {useState} from "react";
 import  hamburger  from '../assets/icons/hamburger.svg';
 import cross from "../assets/icons/cross.svg";
 import headerLogo from "../assets/icons/headerLogo.svg";
-import { navLinks } from "../constants";
+import { navLinks } from "./constants";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {

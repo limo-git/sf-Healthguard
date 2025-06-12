@@ -1,7 +1,18 @@
-import {cardsData} from '../constants'
 import IndividualCard from './IndividualCard'
 import Button from './Button'
 import arrowRight from '../assets/icons/arrowRight.svg'
+import { DiseaseService } from "../services/DiseaseService";
+import headerLogo from "../assets/icons/headerLogo.svg";
+import config from "../chatbot/config";
+import MessageParser from "../chatbot/MessageParser";
+import ActionProvider from "../chatbot/ActionProvider";
+import LoginPage from "../Pages/LoginPage";
+import { Disease } from "../models/Disease";
+import { navLinks, cardsData } from "./constants";
+import doctor_image_url from "../assets/images/doctor-img.jpg";
+import App from "../App";
+import "../index.css";
+import dataset from "../assets/dataset/dataset.json";
 
 const Cards = () => {
   return (

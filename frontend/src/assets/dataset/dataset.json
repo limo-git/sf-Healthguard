@@ -1168,5 +1168,14 @@
         "severity": 3
       }
     ]
+  },
+  "COVID": {
+    "symptoms": [
+      { "name": "Fever", "probability": 3, "severity": 3 },
+      { "name": "Runny Nose", "probability": 2, "severity": 2 },
+      { "name": "Coughing", "probability": 3, "severity": 3 },
+      { "name": "Chest Pain", "probability": 1, "severity": 3 },
+      { "name": "Shortness of breath", "probability": 1, "severity": 2 }
+    ]
   }
 }

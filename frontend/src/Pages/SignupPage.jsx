@@ -21,7 +21,6 @@ const SignUpPage = () => {
       <SignupForm />
     </header>
   );
-
 };
 
 export default SignUpPage;
