@@ -1,252 +1,212 @@
 {
   "zone_1": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 68520,
+    "population": 69993,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      3136,
+      3254,
       3267,
       3260,
       3345,
       3259,
-      3233,
-      3245,
-      3245
+      3233
     ],
-    "last_I": 3245,
-    "last_E": 3245
+    "last_I": 3233,
+    "last_E": 3233
   },
   "zone_2": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 67591,
+    "population": 68667,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      11152,
+      11120,
       11000,
       11296,
       11090,
       11355,
-      11539,
-      3387,
-      3387
+      11539
     ],
-    "last_I": 3387,
-    "last_E": 3387
+    "last_I": 11539,
+    "last_E": 11539
   },
   "zone_3": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 65980,
+    "population": 65915,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      6092,
+      3317,
       3408,
       3488,
       3333,
       3379,
-      3359,
-      11573,
-      11573
+      3359
     ],
-    "last_I": 11573,
-    "last_E": 11573
+    "last_I": 3359,
+    "last_E": 3359
   },
   "zone_4": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 62862,
+    "population": 65421,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      12121,
+      6750,
       6682,
       6888,
       6681,
       6889,
-      6744,
-      3420,
-      3420
+      6744
     ],
-    "last_I": 3420,
-    "last_E": 3420
+    "last_I": 6744,
+    "last_E": 6744
   },
   "zone_5": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 48113,
+    "population": 60637,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      5097,
+      5110,
       5166,
       7415,
       5263,
       5210,
-      5251,
-      6862,
-      6862
+      5251
     ],
-    "last_I": 6862,
-    "last_E": 6862
+    "last_I": 5251,
+    "last_E": 5251
   },
   "zone_6": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 43829,
+    "population": 60487,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      10688,
+      10788,
       10724,
       11000,
       10751,
       10740,
-      10831,
-      5915,
-      5915
+      10831
     ],
-    "last_I": 5915,
-    "last_E": 5915
+    "last_I": 10831,
+    "last_E": 10831
   },
   "zone_7": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 41823,
+    "population": 42620,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      2999,
+      3019,
       2990,
       3050,
       3148,
       2980,
-      3141,
-      10934,
-      10934
+      3141
     ],
-    "last_I": 10934,
-    "last_E": 10934
+    "last_I": 3141,
+    "last_E": 3141
   },
   "zone_8": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 40401,
+    "population": 40569,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      11872,
+      12054,
       12124,
       12004,
       12183,
       15700,
-      12229,
-      2798,
-      2798
+      12229
     ],
-    "last_I": 2798,
-    "last_E": 2798
+    "last_I": 12229,
+    "last_E": 12229
   },
   "zone_9": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 38790,
+    "population": 40100,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      2330,
+      2236,
       2236,
       3185,
       2308,
       2308,
-      2256,
-      13881,
-      13881
+      2256
     ],
-    "last_I": 13881,
-    "last_E": 13881
+    "last_I": 2256,
+    "last_E": 2256
   },
   "zone_10": {
-<<<<<<< Updated upstream
-    "beta": 0.32485701168842396,
-=======
     "beta": 0.303,
->>>>>>> Stashed changes
     "sigma": 0.1923076923076923,
     "gamma": 0.3448275862068966,
-    "population": 31205,
+    "population": 36242,
     "outbreak_zscore": 2.0,
     "epidemic_fraction": 0.01,
     "calibration_error_threshold": 50,
     "last_R": 0,
     "recent_counts": [
+      4544,
+      3343,
       3309,
       3536,
       3360,
       3507,
-      3484,
-      3327,
-      3327
+      3484
     ],
-    "last_I": 3327,
-    "last_E": 3327
+    "last_I": 3484,
+    "last_E": 3484
   }
 }
