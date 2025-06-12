@@ -1,13 +1,20 @@
+import os
+from dotenv import load_dotenv
 import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
+load_dotenv()
+
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
 data_store = []
 
-GEMINI_API_KEY = "AIzaSyASTRac6enA6adOHJ-CXcWZUrY321dNdFg"
+# Load Gemini API Key from environment
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY not set in environment variables")
 
 @app.route('/api/register', methods=['POST'])
 def register():
@@ -35,9 +42,7 @@ def gemini_proxy():
         response = requests.post(
             "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent",
             params={"key": GEMINI_API_KEY},
-            json={
-                "contents": [{"parts": [{"text": user_message}]}]
-            }
+            json={"contents": [{"parts": [{"text": user_message}]}]}
         )
         gemini_data = response.json()
         gemini_reply = gemini_data['candidates'][0]['content']['parts'][0]['text']
@@ -46,4 +51,4 @@ def gemini_proxy():
     return jsonify({"reply": gemini_reply})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000) 
+    app.run(debug=True, port=5000)
