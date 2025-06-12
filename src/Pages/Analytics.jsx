@@ -384,7 +384,43 @@ useEffect(() => {
       setLoading(false);
     });
 }, []);
+const [historicalData, setHistoricalData] = useState([]);
 
+// ──────────────────────────────────────────────────────
+// 2. Second useEffect: build first‑14‑day aggregation
+// ──────────────────────────────────────────────────────
+useEffect(() => {
+  if (!timeSeriesData.length || !zoneData.length) return;
+
+  // 2.1 Get the first 14 days from your existing timeSeriesData
+  const first14 = timeSeriesData.slice(0, 14);
+
+  // 2.2 Aggregate total cases per zone over those 14 days
+  const agg = {};
+  first14.forEach(day => {
+    Object.entries(day).forEach(([key, value]) => {
+      if (key === 'date') return;
+      agg[key] = (agg[key] || 0) + (value || 0);
+    });
+  });
+
+  // 2.3 Build the historicalData array
+  const hist = Object.entries(agg).map(([zone, totalCases]) => {
+    const { population = 0 } = zoneData.find(z => z.zone === zone) || {};
+    const isOutbreak = totalCases > (population / 10);
+    const coords     = ZONE_COORDINATES[zone] || { lat: 0, long: 0 };
+    return {
+      zone,
+      totalCases,
+      population,
+      isOutbreak,
+      lat:   coords.lat,
+      long:  coords.long
+    };
+  });
+
+  setHistoricalData(hist);
+}, [timeSeriesData, zoneData]);
 
 
   if (loading) {
@@ -402,7 +438,8 @@ useEffect(() => {
       <Tabs defaultValue="overview" className="space-y-4">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="heatmap">World Heatmap</TabsTrigger>
+          <TabsTrigger value="history">History HeatMap Analysis</TabsTrigger>
+          <TabsTrigger value="heatmap">Predicted World Heatmap</TabsTrigger>
           <TabsTrigger value="collaboration">Collaboration</TabsTrigger>
         </TabsList>
 
@@ -678,6 +715,62 @@ useEffect(() => {
           </Card>
         </TabsContent>
 
+<TabsContent value="history" className="space-y-4">
+  <Card>
+    <CardHeader>
+      <CardTitle>Historical Heatmap: First 14 Days</CardTitle>
+    </CardHeader>
+    <CardContent>
+      <div className="h-[600px] w-full relative">
+        <MapContainer
+          center={[20.5937, 78.9629]}
+          zoom={5}
+          zoomControl={false}
+          scrollWheelZoom={false}
+          doubleClickZoom={false}
+          touchZoom={false}
+          dragging={false}
+          style={{ height: '100%', width: '100%' }}
+        >
+          <TileLayer
+            attribution='&copy; OpenStreetMap contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+
+          {historicalData.map((z, i) => (
+            <CircleMarker
+              key={i}
+              center={[z.lat, z.long]}
+              radius={calculateRadius(z.totalCases)}
+              pathOptions={{
+                fillColor: z.isOutbreak ? 'red' : 'green',
+                color:     z.isOutbreak ? 'red' : 'green',
+                fillOpacity: 0.7,
+                weight:      1
+              }}
+            >
+              <Tooltip>
+                <div className="p-2">
+                  <h3 className="font-bold">{z.zone}</h3>
+                  <p>Total Cases (14d): {z.totalCases}</p>
+                  <p>Population: {z.population.toLocaleString()}</p>
+                  <p>
+                    Status:{' '}
+                    <span className={z.isOutbreak ? 'text-red-600' : 'text-green-600'}>
+                      {z.isOutbreak ? 'Outbreak' : 'Normal'}
+                    </span>
+                  </p>
+                </div>
+              </Tooltip>
+            </CircleMarker>
+          ))}
+
+        </MapContainer>
+      </div>
+    </CardContent>
+  </Card>
+</TabsContent>
+
         <TabsContent value="timeline" className="space-y-4">
 
         </TabsContent>
@@ -738,7 +831,7 @@ useEffect(() => {
             </CardContent>
           </Card>
         </TabsContent>
-
+        
         <TabsContent value="collaboration" className="space-y-4">
           <CollaborationPage />
         </TabsContent>
