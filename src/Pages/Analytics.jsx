@@ -685,7 +685,7 @@ useEffect(() => {
         <TabsContent value="heatmap" className="space-y-4">
           <Card>
             <CardHeader>
-              <CardTitle>World Heatmap of Cases</CardTitle>
+              <CardTitle>Predicted World Heatmap of Cases for next two weeks</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="h-[600px] w-full relative">
